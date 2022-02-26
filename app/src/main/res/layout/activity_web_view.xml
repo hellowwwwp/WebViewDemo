@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.webviewdemo.NestedWebLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF0000">
+
+            <com.example.webviewdemo.MyWebView
+                android:id="@+id/web_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/comment_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/comment_title_shape"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="热门回复(40)"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comment_rcv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF" />
+
+        </com.example.webviewdemo.NestedWebLinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/open_disallow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启禁用拦截" />
+
+        <Button
+            android:id="@+id/close_disallow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭禁用拦截" />
+
+        <Button
+            android:id="@+id/open_refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启下拉刷新" />
+
+        <Button
+            android:id="@+id/close_refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭下拉刷新" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
