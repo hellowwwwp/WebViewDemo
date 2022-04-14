@@ -1,2 +1,5 @@
 # WebViewDemo
-SwipeRefreshLayout -> 自定义 ViewGroup -> WebView + RecyclerView 嵌套滑动 demo
+--
+**NestedScrollWebView** 支持纵向的嵌套滑动以及横向正常滑动
+
+**NestedWebLinearLayout** WebView + RecyclerView 复杂嵌套滑动 Demo
