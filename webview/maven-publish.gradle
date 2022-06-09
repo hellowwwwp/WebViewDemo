@@ -15,7 +15,7 @@ afterEvaluate {
                 // To use: implementation "com.hellowwwwp:webview:0.0.1".
                 groupId = "com.hellowwwwp"
                 artifactId = "webview"
-                version = "0.0.2"
+                version = "0.0.3"
                 // Publish with sources
                 artifact generateSourcesJar
             }
