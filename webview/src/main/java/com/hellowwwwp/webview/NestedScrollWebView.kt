@@ -15,7 +15,7 @@ import kotlin.math.abs
 
 /**
  * @author: wangpan
- * @email: p.wang@aftership.com
+ * @email: p.wang0813@gmail.com
  * @date: 2022/4/14
  *
  * 支持纵向的嵌套滑动以及水平方向的正常滑动
