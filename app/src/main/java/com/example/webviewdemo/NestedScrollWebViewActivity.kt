@@ -2,8 +2,7 @@ package com.example.webviewdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.webkit.WebSettings
-import android.webkit.WebView
+import android.webkit.*
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.webviewdemo.databinding.ActivityNestedScrollWebViewBinding
 
@@ -52,6 +51,24 @@ class NestedScrollWebViewActivity : AppCompatActivity() {
         }
 
         with(webView) {
+            webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                        view.loadUrl(url)
+                        return true
+                    }
+                    return false
+                }
+
+                override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+                    val url = request.url.toString()
+                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                        view.loadUrl(url)
+                        return true
+                    }
+                    return false
+                }
+            }
             settings.javaScriptEnabled = true
             settings.domStorageEnabled = true
             settings.databaseEnabled = true
